@@ -64,7 +64,7 @@ public class StepComponent extends VerticalLayout {
 
         if (step.getResult().getDocuments().size() > 0) {
             for (Document document : step.getResult().getDocuments()) {
-                var anchor = new Anchor(String.format("/api/files/%s/documents/%s", document.getWorkspaceId(), document.getName()), document.getName());
+                var anchor = new Anchor(String.format("/api/tasks/%s/documents/%s", document.getWorkspaceId(), document.getName()), document.getName());
                 anchor.setClassName("download-button");
                 anchor.getElement().setAttribute("download", true);
                 component.add(anchor);

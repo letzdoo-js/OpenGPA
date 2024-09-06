@@ -36,7 +36,7 @@ public class TTSActionRenderer implements ActionRenderer{
         resultContainer.setClassName("tts-result-container");
         resultContainer.setWidthFull();
 
-        String url = String.format("/api/files/%s/documents/%s", document.getWorkspaceId(), document.getName());
+        String url = String.format("/api/tasks/%s/documents/%s", document.getWorkspaceId(), document.getName());
 
         // HTML5 audio tag as a String
         String audioHtml = String.format("<audio controls>"
