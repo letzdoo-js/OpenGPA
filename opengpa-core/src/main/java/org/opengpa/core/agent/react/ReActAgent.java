@@ -145,6 +145,7 @@ public class ReActAgent implements Agent {
                 .result(result)
                 .action(agentOutput.getAction())
                 .isFinal(agentOutput.isFinal())
+                .insight(agentOutput.getInsight())
                 .reasoning(agentOutput.getReasoning())
                 .build();
 

@@ -26,6 +26,7 @@ public class StepComponent extends VerticalLayout {
         actionContainer.setVisible(false);
 
         Component outputComponent = outputComponent(step);
+        Component insightCompoment = insightComponent(step);
         Component reasoningComponent = reasoningComponent(step);
         Component linksComponent = getLinksComponent(step);
 
@@ -33,7 +34,7 @@ public class StepComponent extends VerticalLayout {
         expandButton.addClassName("step-details-button");
         expandButton.addClickListener(e -> reasoningComponent.setVisible(!reasoningComponent.isVisible()));
 
-        add(actionContainer, outputComponent, reasoningComponent, linksComponent, expandButton);
+        add(insightCompoment, actionContainer, outputComponent, reasoningComponent, linksComponent, expandButton);
         expand(actionContainer);
     }
 
@@ -47,6 +48,14 @@ public class StepComponent extends VerticalLayout {
         var component = new Html("<div>" +  htmlOutput + "</div>");
         component.addClassName("step-output");
         component.setVisible(StringUtils.hasText(step.getResult().getOutput()));
+        return component;
+    }
+
+    private @NotNull Component insightComponent(AgentStep step) {
+        var component = new Div();
+        component.setText("💡: " + step.getInsight());
+        component.addClassName("step-insight");
+        component.setVisible(StringUtils.hasText(step.getInsight()));
         return component;
     }
 

@@ -208,12 +208,13 @@ public class MainView extends VerticalLayout {
             }
         }
 
+        UI ui = componentEvent.getSource().getUI().orElseThrow();
         if (currentTask == null) {
             currentTask = taskService.plan(user.getName(), chatMessage, new HashMap<>());
+            executeNextStep(ui, "");
+        } else {
+            executeNextStep(ui, chatMessage);
         }
-
-        UI ui = componentEvent.getSource().getUI().orElseThrow();
-        executeNextStep(ui, chatMessage);
     }
 
     private void executeNextStep(UI ui, String chatMessage) {

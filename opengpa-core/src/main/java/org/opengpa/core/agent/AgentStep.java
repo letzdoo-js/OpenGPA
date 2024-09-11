@@ -25,6 +25,8 @@ public class AgentStep
 
     String reasoning;
 
+    String insight;
+
     String feedback;
 
     ActionResult result;

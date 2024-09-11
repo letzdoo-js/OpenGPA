@@ -18,6 +18,8 @@ public class ReActAgentOutput {
     @JsonProperty("is_final")
     private boolean isFinal;
 
+    private String insight;
+
     private String reasoning;
 
 }
