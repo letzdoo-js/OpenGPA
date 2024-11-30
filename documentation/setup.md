@@ -44,8 +44,8 @@ mvn clean package -Pproduction
 ### Configure the systemd service
 
 ```bash
- cp devops/opengpa.service /etc/systemd/system/opengpa.service
- cp devops/opengpa.default /etc/default/opengpa
+ sudo cp devops/opengpa.service /etc/systemd/system/opengpa.service
+ sudo cp devops/opengpa.default /etc/default/opengpa
  sudo systemctl enable opengpa.service
 ```
 
